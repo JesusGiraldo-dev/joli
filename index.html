@@ -282,18 +282,26 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
   .about-grid{grid-template-columns:1fr;gap:3rem}
 }
 @media(max-width:900px){
-  nav,nav.scrolled{padding:1.35rem 1.75rem}
+  nav,nav.scrolled{padding:1.1rem 1.5rem}
   .nav-links{display:none}
-  .nav-burger{display:flex}
-  .hero-top,.hero-mid,.hero-bottom,.hero-controls{padding-left:1.75rem;padding-right:1.75rem}
-  .hero-bottom{grid-template-columns:1fr;gap:1.5rem}
-  .section,.cv-section{padding:5rem 1.75rem}
+  .nav-burger{display:flex;padding:10px;margin:-10px}
+  .hero-top,.hero-mid,.hero-bottom,.hero-controls{padding-left:1.5rem;padding-right:1.5rem}
+  .hero-top{padding-top:6.5rem}
+  .hero-bottom{grid-template-columns:1fr;gap:1.5rem;padding-top:1.75rem}
+  .hero-actions{flex-wrap:wrap}
+  .hero-actions .btn-primary,.hero-actions .btn-ghost{flex:1 1 auto;text-align:center}
+  .hero-controls{flex-wrap:wrap;gap:1rem}
+  .hero-dot{position:relative}
+  .hero-dot::after{content:'';position:absolute;inset:-10px}
+  .theme-toggle{padding:0.65rem 0.9rem}
+  .section,.cv-section{padding:4.5rem 1.5rem}
   .about-grid{grid-template-columns:1fr}
+  .about-visual{max-width:340px;margin:0 auto}
   .about-stats{grid-template-columns:1fr 1fr}
-  .contact-section{grid-template-columns:1fr;padding:5rem 1.75rem;gap:2.5rem}
+  .contact-section{grid-template-columns:1fr;padding:4.5rem 1.5rem;gap:2.5rem}
   .cv-refs-grid{grid-template-columns:1fr}
   .process-grid{grid-template-columns:1fr}
-  .process-step{border-right:none;border-bottom:1px solid var(--border)}
+  .process-step{border-right:none;border-bottom:1px solid var(--border);padding:1.75rem 0}
   .process-step:last-child{border-bottom:none}
 
   /* Proyectos: en táctil no hay hover, así que la miniatura se muestra siempre (Motion la revela con máscara) */
@@ -307,6 +315,23 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
   .motion .project-row[data-reveal] .project-row-thumb{clip-path:inset(0 100% 0 0)}
 
   footer{padding:1.5rem 1.75rem;flex-direction:column;gap:0.75rem;text-align:center}
+}
+
+/* ── PANTALLAS MUY PEQUEÑAS (iPhone SE y similares) ── */
+@media(max-width:420px){
+  nav,nav.scrolled{padding:1rem 1.1rem}
+  .nav-logo{font-size:1.15rem}
+  .hero-top,.hero-mid,.hero-bottom,.hero-controls{padding-left:1.1rem;padding-right:1.1rem}
+  .hero-top{padding-top:5.5rem}
+  .hero-year{display:none}
+  .hero-actions{flex-direction:column;align-items:stretch;gap:0.75rem}
+  .hero-stats{grid-template-columns:1fr 1fr;gap:1px}
+  .stat-num{font-size:1.9rem}
+  .hero-controls .scroll-cue{display:none}
+  .section,.cv-section{padding:3.5rem 1.1rem}
+  .contact-section{padding:3.5rem 1.1rem}
+  .about-visual{max-width:100%}
+  .cv-ref-card{padding:1.15rem}
 }
 
 /* ── PREFERENCIA DE MOVIMIENTO REDUCIDO (la clase .motion ni se aplica; esto cubre lo que no es Motion) ── */
